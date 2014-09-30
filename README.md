@@ -14,8 +14,13 @@ A CV dynamically generated from a JSON file, Hosted with Flask with the Bootstra
 ###TODO LIST:
 
 * Update README.md
+* Include tutorial to create your own CV
+* Fix DOCX generation of links
+* Load background images for main page from JSON
+* Add SEO elements
+* Add Google tracking
 * Include better instructions for Heroku deployment (git, heroku-toolbelt)
-* Fix styles in template.docx
+* Update styles in template.docx
 * Try to implement automatic pages (so sections don't overlap)
 * Add examples to deploy to other scenarios
 * Add Apache integration
