@@ -1,0 +1,39 @@
+<!doctype html>
+
+<style>
+body {
+    font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+</style>
+<title>{{json.basics.name}} - CV</title>
+                <h2>{{json.basics.name}}</h2>
+                <p><a href="mailto:{{json.basics.email}}">Email</a> | <a href="https://github.com/positivenoise">Source</a> | {{json.basics.location}} | {{json.basics.phone}} | </p>
+                <p><h4>Education</h4>
+                <ul>
+                {% for items in json.education %}
+                    <li>{{items.name}} Obtained: {{items.date}}</li>
+                {% endfor %}
+                </ul>
+                </p>
+                <p>
+                <h4>Skills</h4>
+                {% for items in json.skills %}
+                   <h5>{{items.type}}</h5>
+                    <p><ul>
+                    {% for items2 in items.keywords %}
+                       <li>{{items2}}</li>
+                    {% endfor %}
+                     </ul></p>
+                {% endfor %}
+                </p>
+                <h4>Experience</h4>
+{% for items in json.work %}
+    <h5><a href="{{items.website}}">{{items.company}}</a> - {{items.position}} from {{items.startDate}} to {{items.endDate}}</h5>
+                <p><ul>
+    {% for items2 in items.summary %}
+                <li>{{items2}}</li>
+        {% endfor %}
+                </ul></p>
+{% endfor %}

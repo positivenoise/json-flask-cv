@@ -1,0 +1,5 @@
+Flask==0.9
+Jinja2==2.7
+python-docx==0.7.4
+cffi==0.8.6
+Flask-WeasyPrint==0.4
