@@ -1,12 +1,10 @@
 import os, time
 from flask import Flask, render_template, json, make_response, g
-from flask_weasyprint import HTML,render_pdf
+from flask_weasyprint import HTML, render_pdf
 from docx import Document
 
-
-os.environ['TZ'] = 'AEST-10AEDT-11,M10.5.0,M3.5.0'
+os.environ['TZ'] = 'AEST-10'
 time.tzset()
-time.strftime("%a, %d %b %Y %H:%M:%S AEST")
 
 def import_json():
     f =  open("resume.json")
@@ -19,7 +17,7 @@ def generate_docx(json_data):
 
     document = Document("static/template.docx")
     document.add_heading(json_data["basics"]["name"], 0)
-    document.add_paragraph(json_data["basics"]["email"] + ' | ' + json_data["basics"]["location"] + ' | ' + json_data["basics"]["phone"] + ' | ' + 'Generated on:' + time.strftime("%a, %d %b %Y %H:%M:%S AEST"))
+    document.add_paragraph(json_data["basics"]["email"] + ' | ' + json_data["basics"]["location"] + ' | ' + json_data["basics"]["phone"] + ' | ' + 'Generated on: ' + time.strftime("%a, %d %b %Y %H:%M:%S AEST"))
     document.add_heading('Education', level=1)
 
     for s in json_data["education"]:
