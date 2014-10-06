@@ -4,7 +4,7 @@ from flask_weasyprint import HTML,render_pdf
 from docx import Document
 
 def import_json():
-    f =  open("static/resume.json")
+    f =  open("resume.json")
     jdat = f.read()
     json_data = json.loads(jdat)
     f.close()
@@ -14,7 +14,7 @@ def generate_docx(json_data):
 
     document = Document("static/template.docx")
     document.add_heading(json_data["basics"]["name"], 0)
-    document.add_paragraph('Email | Source | ' + json_data["basics"]["location"] + ' | ' + json_data["basics"]["phone"])
+    document.add_paragraph(json_data["basics"]["email"] + ' | ' + json_data["basics"]["location"] + ' | ' + json_data["basics"]["phone"])
     document.add_heading('Education', level=1)
 
     for s in json_data["education"]:
@@ -37,21 +37,23 @@ def generate_docx(json_data):
     return document
 
 def json2xml(json_obj, line_padding=""):
-    result_list = list()
+    rl = list()
     json_obj_type = type(json_obj)
 
     if json_obj_type is list:
         for sub_elem in json_obj:
-            result_list.append(json2xml(sub_elem, line_padding))
-        return "\n".join(result_list)
+            rl.append(json2xml(sub_elem, line_padding))
+
+        return "\n".join(rl)
 
     if json_obj_type is dict:
-        for tag_name in json_obj:
-            sub_obj = json_obj[tag_name]
-            result_list.append("%s<%s>" % (line_padding, tag_name))
-            result_list.append(json2xml(sub_obj, "\t" + line_padding))
-            result_list.append("%s</%s>" % (line_padding, tag_name))
-        return "\n".join(result_list)
+        for tag in json_obj:
+            sub_obj = json_obj[tag]
+            rl.append("%s<%s>" % (line_padding, tag))
+            rl.append(json2xml(sub_obj, "\t" + line_padding))
+            rl.append("%s</%s>" % (line_padding, tag))
+        return "\n".join(rl)
+
     return "%s%s" % (line_padding, json_obj)
 
 app = Flask(__name__)

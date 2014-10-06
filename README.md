@@ -1,7 +1,7 @@
 JSON-Flask-CV
 =============
 
-A CV dynamically generated from a JSON file, Hosted with Flask with the Bootstrap template, outputting to .PDF .DOCX .JSON and .XML file formats.
+A CV dynamically generated from a JSON file, hosted with Flask with the Bootstrap template, outputting to .PDF .DOCX .JSON and .XML file formats.
 
 See an example at http://brendan-muscat-cv.herokuapp.com
 ###Command line to deploy to heroku:
@@ -14,12 +14,10 @@ See an example at http://brendan-muscat-cv.herokuapp.com
 
 ###TODO LIST:
 
-* Update README.md
+* Add "Generated on" field to website, docx and PDF outputs
 * Include tutorial to create your own CV
-* Fix DOCX generation of links
 * Load background images for main page from JSON
 * Add SEO elements
-* Add Google tracking
 * Include better instructions for Heroku deployment (git, heroku-toolbelt)
 * Update styles in template.docx
 * Try to implement automatic pages (so sections don't overlap)
