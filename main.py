@@ -1,7 +1,12 @@
-import os
+import os, time
 from flask import Flask, render_template, json, make_response, g
 from flask_weasyprint import HTML,render_pdf
 from docx import Document
+
+
+os.environ['TZ'] = 'AEST-10AEDT-11,M10.5.0,M3.5.0'
+time.tzset()
+time.strftime("%a, %d %b %Y %H:%M:%S AEST")
 
 def import_json():
     f =  open("resume.json")
@@ -14,7 +19,7 @@ def generate_docx(json_data):
 
     document = Document("static/template.docx")
     document.add_heading(json_data["basics"]["name"], 0)
-    document.add_paragraph(json_data["basics"]["email"] + ' | ' + json_data["basics"]["location"] + ' | ' + json_data["basics"]["phone"])
+    document.add_paragraph(json_data["basics"]["email"] + ' | ' + json_data["basics"]["location"] + ' | ' + json_data["basics"]["phone"] + ' | ' + 'Generated on:' + time.strftime("%a, %d %b %Y %H:%M:%S AEST"))
     document.add_heading('Education', level=1)
 
     for s in json_data["education"]:
@@ -63,7 +68,7 @@ def before_request():
     g.json_data = import_json()
 @app.route('/')
 def index():
-    return render_template('index.html', json = g.json_data)
+    return render_template('index.html', json = g.json_data, generated = time.strftime("%a, %d %b %Y %H:%M:%S AEST"))
 
 @app.route('/xml')
 def xml():
@@ -75,7 +80,7 @@ def jsonpage():
 
 @app.route('/pdf')
 def pdf():
-    html = render_template('pdf.html', json=g.json_data)
+    html = render_template('pdf.html', json=g.json_data, generated = time.strftime("%a, %d %b %Y %H:%M:%S AEST"))
     return render_pdf(HTML(string=html))
 
 @app.route('/download/json')

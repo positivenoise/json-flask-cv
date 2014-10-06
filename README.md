@@ -14,7 +14,6 @@ See an example at http://brendan-muscat-cv.herokuapp.com
 
 ###TODO LIST:
 
-* Add "Generated on" field to website, docx and PDF outputs
 * Include tutorial to create your own CV
 * Load background images for main page from JSON
 * Add SEO elements
