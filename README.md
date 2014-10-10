@@ -14,10 +14,10 @@ See an example at http://brendan-muscat-cv.herokuapp.com
 
 ###TODO LIST:
 
-* Include tutorial to create your own CV
+* Add Upload file function
+* Remove resume.json from default repo, and have user setup and deploy to heroku button on main page if resume.json not detected. 
 * Load background images for main page from JSON
 * Add SEO elements
-* Include better instructions for Heroku deployment (git, heroku-toolbelt)
 * Update styles in template.docx
 * Try to implement automatic pages (so sections don't overlap)
 * Add examples to deploy to other scenarios
