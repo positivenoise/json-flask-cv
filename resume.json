@@ -40,7 +40,11 @@
 },
 {
 "name": "CCNA",
-"date": "Obtained 2010, renewed 2014"
+"date": "2010, renewed 2014"
+},
+{
+"name": "VCA-Data Center Virtualization",
+"date": "2014"
 }],
 "work": [{
 "company": "Publicis Mojo",
@@ -51,7 +55,7 @@
 "summary": "IT Manager for Brisbane arm of Publicis, Windows/Mac mixed environment of ~120 local users within enterprise AD network, responsible for all day to day IT requirements and activities.",
 "highlights": [
 "Assisted with general IT operations with global enterprise team.",
-"Assisted digital teams with troubleshooting and administering web platforms.".
+"Assisted digital teams with troubleshooting and administering web platforms.",
 "Migrated all users and systems from Windows XP/Server 2003 to Windows 7/Server 2008, assisted consolidation of local domains to global domain.",
 "Assisted migration of Lotus Notes to Exchange 2013.",
 "Responsible for job queue of Australian offices through ServiceNow."
@@ -65,19 +69,14 @@
 "endDate": "April 2012",
 "summary": "Systems Engineer for MSP Infotech Solutions, ~70 clients focusing on accounting firms.",
 "highlights": [
-"Installed, Migrated, and configured Windows 2008 Server/VMWare ESX/Citrix environments.".
+"Installed, Migrated, and configured Windows 2008 Server/VMWare ESX/Citrix environments.",
 "Installed and configured network appliances including Netbox Blue, Watchguard, Sonicwall, Cisco and HP products.",
 "Managed and maintained application infrastructure such as Symantec Backup and Trend Micro AV.",
 "Configured and administered Windows services including IIS, MSSQL, Terminal Services, WDS, WSUS, SCOM and SCCM",
 "Onsite maintenance and troubleshooting of level 2/3 issues."
 ]
 }],
-"skills": [{
-"type": "Languages",
-"keywords": [
-"Python 2/3, PHP, Java/Javascript, SQL, C/C++, BASH, VBS, PowerShell, .NET"
-]
-},
+"skills": [
 {
 "type": "Operating Systems",
 "keywords": [
@@ -89,6 +88,12 @@
 "type": "Software",
 "keywords": [
 "Citrix XenDesktop, XenApp and XenServer","VMWare vSphere and ESX", "Microsoft IIS Server, Microsoft SQL Server 2003/2008/2011, Terminal Services, WDS, WSUS, SCOM, SCCM", "Apache, MySQL, FTP and SSH servers", "Symantec Products including Backup exec and Endpoint Protection", "CA ARCServe, Trend Micro", "A large range of accounting software such as MYOB, APS, BGL, Handisoft and Quicken"
+]
+},
+{
+"type": "Languages",
+"keywords": [
+"Python 2/3, PHP, Java/Javascript, SQL, C/C++, BASH, VBS, PowerShell, .NET"
 ]
 }
 ]

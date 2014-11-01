@@ -32,7 +32,9 @@ def generate_docx(json_data):
 
     for s in json_data["work"]:
         document.add_paragraph(s["company"] + " | " + s["position"] + " | from " + s["startDate"] + " to " + s["endDate"])
-        for x in s["summary"]:
+        document.add_paragraph(s["summary"])
+        document.add_heading("Highlights", level=2)
+        for x in s["highlights"]:
             document.add_paragraph(x, style='ListBullet')
 
     document.add_page_break()

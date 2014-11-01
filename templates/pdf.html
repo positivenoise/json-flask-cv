@@ -31,9 +31,11 @@ body {
                 <h4>Experience</h4>
 {% for items in json.work %}
     <h5><a href="{{items.website}}">{{items.company}}</a> - {{items.position}} from {{items.startDate}} to {{items.endDate}}</h5>
-                <p><ul>
-    {% for items2 in items.summary %}
-                <li>{{items2}}</li>
-        {% endfor %}
-                </ul></p>
-{% endfor %}
+                <p><ul><li>{{items.summary}}</li></ul></p>
+                <h5>Highlights</h5>
+                                <p><ul>
+                    {% for items2 in items.highlights %}
+                                <li>{{items2}}</li>
+                        {% endfor %}
+                                </ul></p>
+                {% endfor %}
