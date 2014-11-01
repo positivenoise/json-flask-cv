@@ -28,7 +28,7 @@ def generate_docx(json_data):
         document.add_heading(s["type"], level=2)
         for dat in s["keywords"]:
             document.add_paragraph(dat, style='ListBullet')
-    document.add_heading("Experience", level=2)
+    document.add_heading("Experience", level=1)
 
     for s in json_data["work"]:
         document.add_paragraph(s["company"] + " | " + s["position"] + " | from " + s["startDate"] + " to " + s["endDate"])
@@ -37,7 +37,6 @@ def generate_docx(json_data):
         for x in s["highlights"]:
             document.add_paragraph(x, style='ListBullet')
 
-    document.add_page_break()
     document.save("static/resume.docx")
     return document
 
